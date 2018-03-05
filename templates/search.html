@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('search') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="food" placeholder="Ingredients" type="text"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Yummy!</button>
+            </div>
+        </fieldset>
+    </form>
+    {% if data is defined %}
+        <div class="row">
+
+    {% for item in data %}
+    <div class="col-md-2"><a href="{{ item.recipe.url }}"><img src="{{ item.recipe.image }}"/></div>
+
+        <!-- if last column in row -->
+        {% if loop.index %6 == 0 and not loop.last %}
+        </div><div class="row">
+        {% endif %}
+
+    {% endfor %}
+
+    </div>
+    {% endif %}
+{% endblock %}
+

@@ -1,0 +1,111 @@
+@font-face {
+font-family: "Arcade_I";
+src: url("/static/ARCADE_I.TTF");
+}
+
+@font-face {
+font-family: "Arcade_N";
+src: url("/static/ARCADE_N.TTF");
+}
+
+
+#head {
+    margin-top: 25px;
+    text-align: center;
+}
+
+#main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height:70%;
+    text-align: center;
+}
+
+#title {
+  top: 50%;
+  height: 100px;
+}
+
+#att {
+    font-family: Arcade_N;
+    margin-left: 20px;
+    font-size: large;
+}
+
+#gametable {
+    margin: 0 auto;
+    position: relative;
+    width: 70%;
+    clear: left;
+}
+
+#ranking {
+    width: 100%;
+}
+
+a#new {
+    font-size: 16pt;
+    margin: 20px;
+    float: right;
+}
+
+.centerTable {
+    margin: 0px auto;
+}
+
+.grids {
+    margin-top: 50px;
+}
+
+* {
+    font-family: Arcade_N;
+}
+
+h1 {
+    font-family: Arcade_N;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-family: Arcade_N;
+}
+
+img {
+    object-fit: cover;
+    width:120px;
+    height:120px;
+    margin: 10px;
+}
+
+font {
+    font-family: Arcade_N;
+    margin: 25px;
+}
+
+table {
+    width: 100%;
+}
+
+thead {
+    margin-bottom: 50px;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+td {
+    font-size: 14pt;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+}
+
+form {
+    width: 300px;
+    margin: 25px 0px 25px 20px;
+
+}
+
+

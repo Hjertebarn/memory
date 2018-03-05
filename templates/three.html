@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Pairs 3x4
+{% endblock %}
+
+{% block main %}
+<div ="main">
+    <div id="head">
+        <font size="3" id="timer">Time: 0:0</font><font size="6">Pairs 3x4</font><font size="3" id="attempts">Attempts: 0</font>
+    </div>
+  <div id="gametable">
+        <table class="centerTable">
+            <tr>
+        {% for item in table %}
+
+              <td align="center"><img src="static/images/grumpy.jpg" id="{{ item }}" onclick="swapImage('{{ item }}', '{{ item|replace("-", "") }}')" />
+               </td>
+
+            <!-- if last column in row-->
+            {% if loop.index %4 == 0 and not loop.last %}
+            </tr><tr>
+            {% endif %}
+
+        {% endfor %}
+
+            </tr>
+        </table>
+  </div>
+  <form id="winForm" action = "/won" method = "POST">
+     <input type='hidden' name='attempts'/>
+     <input type='hidden' name='time'/>
+     <input type='hidden' name='grid' value='three'/>
+  </form>
+</div>
+{% endblock %}
+

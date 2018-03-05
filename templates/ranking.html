@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Memory Ranking
+{% endblock %}
+
+{% block main %}
+    <a href="{{ url_for('index') }}" id="new">New Game?</a>
+    <center><p id="title"><h1>Highscores</h1></p></center>
+
+<div id="main">
+    <table id="ranking">
+        <thead>
+        <tr>
+            <td>Rank</td><td>Name</td><td>Time</td><td>Attempts</td><td>Date</td>
+        </tr>
+        </thead>
+        <tbody>
+                    {% for row in rows %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.time }}</td>
+                    <td>{{ row.attempts }}</td>
+                    <td>{{ row.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

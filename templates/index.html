@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Memory
+{% endblock %}
+
+{% block main %}
+    <center><p id="title"><h1>Meme-ory</h1></p></center>
+
+    <div class="col-md-4 grids" align="center">
+        <a href="{{ url_for('two') }}"><h2>2x4</h2></a>
+    </div>
+    <div class="col-md-4 grids" align="center">
+        <a href="{{ url_for('three') }}"><h2>3x4</h2></a>
+    </div>
+    <div class="col-md-4 grids" align="center">
+        <a href="{{ url_for('four') }}"><h2>4x4</h2></a>
+    </div>
+
+
+
+{% endblock %}
+
