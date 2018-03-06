@@ -6,7 +6,7 @@
 
 {% block main %}
     <a href="{{ url_for('index') }}" id="new">New Game?</a>
-    <center><p id="title"><h1>Highscores</h1></p></center>
+    <center><p id="title"><h1>Highscores {% if grid|string() == "two" %}2{% endif %} {% if grid|string() == "three" %}3{% endif %} {% if grid|string() == "four" %}4{% endif %} x 4 </h1></p></center>
 
 <div id="main">
     <table id="ranking">

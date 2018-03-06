@@ -2,7 +2,7 @@ import os
 import re
 import requests
 from flask import Flask, jsonify, render_template, request, redirect, url_for, session, make_response
-from flask.ext.session import Session
+from flask_session import Session
 import json
 
 from cs50 import SQL
@@ -14,7 +14,6 @@ app = Flask(__name__)
 APPLICATION_SETTINGS = "settings.cfg"
 if os.path.exists(APPLICATION_SETTINGS):
     app.config.from_pyfile('settings.cfg')
-    print("configfile: " + app.config['API_KEY'])
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///memory.db")
@@ -68,12 +67,13 @@ def ranking():
     attempts = request.cookies.get('attempts')
     time = request.cookies.get('time')
     grid = request.cookies.get('grid')
+    print("grid: " + grid)
 
     if request.method == "POST":
         db.execute("INSERT INTO ranking{0} (name, time, attempts) VALUES (:name, :time, :attempts)".format(grid),
                     name=request.form.get("name"), time=time, attempts=attempts)
     rows = db.execute("SELECT * FROM ranking{0} ORDER BY time, attempts ASC".format(grid))
-    return render_template("ranking.html", rows=rows)
+    return render_template("ranking.html", rows=rows, grid=grid)
 
 
 
