@@ -2,13 +2,15 @@
 
 A simple game of pairs with trending Memes. And Grumpy Cat.
 
-## Getting Started
+Built with Flask, Python, JavaScript and SQLite.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+### Motivation
+
+Final Project for CS50's Introduction to Computer Science online course.
 
 ### Prerequisites
 
-Playing the game with Memes requires imgur API keys.
+Playing the game with Memes requires [imgur API keys](https://apidocs.imgur.com/).
 To provide the keys you can either make a config file "settings.cfg" with the following content:
 
 ```
@@ -16,7 +18,7 @@ API_KEY = 'YOUR_KEY'
 API_SECRET = 'YOUR_SECRET_KEY'
 ```
 
-or provide the keys in your Terminal:
+or provide the keys to your Terminal:
 
 ```
 export API_KEY=YOUR_KEY
@@ -25,45 +27,33 @@ export API_SECRET=YOUR_SECRET_KEY
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+To get the game running, create an virtualenv with python 3 in the same directory as the project files.
 
 ```
-Give the example
+python3 -m venv <myenvname>
 ```
 
-And repeat
-
+activate virtualenv
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+source bin/activate
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
+install required packages for python
 ```
-Give an example
+pip install -r requirements.txt
 ```
 
-## Deployment
+set environment variable for flask app
+```
+export FLASK_APP=application.py
+```
 
-Add additional notes about how to deploy this on a live system
+run flask
+```
+flask run
+```
+
+Now have fun playing!
 
 
 ## Authors
