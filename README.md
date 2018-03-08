@@ -11,14 +11,14 @@ Final Project for CS50's Introduction to Computer Science online course.
 ## Prerequisites
 
 Playing the game with Memes requires [imgur API keys](https://apidocs.imgur.com/).
-To provide the keys you can either make a config file "settings.cfg" with the following content:
+In order to provide the keys you can either make a config file "settings.cfg" with the following content:
 
 ```
 API_KEY = 'YOUR_KEY'
 API_SECRET = 'YOUR_SECRET_KEY'
 ```
 
-or provide the keys to your Terminal:
+or provide the keys as environment variables:
 
 ```
 export API_KEY=YOUR_KEY
@@ -53,7 +53,7 @@ start flask:
 flask run
 ```
 
-Now have fun playing!
+Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) and have fun playing!
 
 
 ## Authors
